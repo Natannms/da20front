@@ -1,13 +1,31 @@
-import React from 'react';
-import ReactDOM from 'react-dom/client';
-import './index.css';
-import App from './App';
-import reportWebVitals from './reportWebVitals';
+import React from "react";
+import ReactDOM from "react-dom/client";
+import "./index.css";
+import App from "./App";
+import {
+  createBrowserRouter,
+  RouterProvider,
+  BrowserRouter,
+  Routes,
+  Route,
+} from "react-router-dom";
+import reportWebVitals from "./reportWebVitals";
+import CreateContact from "./views/CreateContact";
+import EditPhone from "./views/EditPhone";
+import EditContact from "./views/EditContact";
 
-const root = ReactDOM.createRoot(document.getElementById('root'));
+const root = ReactDOM.createRoot(document.getElementById("root"));
+
 root.render(
   <React.StrictMode>
-    <App />
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<App />} />
+        <Route path="/create-contact" element={<CreateContact />} />
+        <Route path="/edit-phone" element={<EditPhone />} />
+        <Route path="/edit-contact" element={<EditContact />} />
+      </Routes>
+    </BrowserRouter>
   </React.StrictMode>
 );
 
